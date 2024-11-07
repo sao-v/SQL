@@ -5,3 +5,6 @@ select distinct author_id as id from Views where author_id = viewer_id order by 
 select name from customer where referee_id != 2 or referee_id is null;
 SELECT tweet_id FROM Tweets
 WHERE LENGTH(content) > 15;
+select 
+eu.unique_id as unique_id, e.name as name
+from Employees e left join EmployeeUNI eu on e.id = eu.id
