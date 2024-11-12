@@ -29,3 +29,6 @@ select customer_id , count(visit_id) as count_no_trans from Visits
 where 
 visit_id not in (select  visit_id from Transactions)
 group by customer_id;
+SELECT w1.id
+FROM Weather w1, Weather w2
+WHERE DATEDIFF(w1.recordDate, w2.recordDate) = 1 AND w1.temperature > w2.temperature;
