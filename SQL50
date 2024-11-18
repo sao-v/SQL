@@ -63,3 +63,9 @@ JOIN (
     HAVING COUNT(*) >= 5
 ) E2 ON E1.id = E2.managerId;
 744382
+-- Write your PostgreSQL query statement below
+SELECT *
+FROM cinema
+WHERE (id % 2) != 0
+AND description NOT IN ('boring')
+ORDER BY rating DESC
