@@ -184,3 +184,9 @@ WHERE primary_flag = 'Y'
        FROM Employee
        WHERE primary_flag = 'Y'
    ));
+eu.unique_id as unique_id, e.name as name
+from Employees e left join EmployeeUNI eu on e.id = eu.id
+select name from customer where referee_id is null or referee_id!=2;
+SELECT 
+    p.product_name, 
+    s.year, 
