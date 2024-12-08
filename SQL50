@@ -200,3 +200,21 @@ LEFT JOIN Employees e2
 ON e1.manager_id = e2.employee_id
 WHERE e1.salary < 30000 AND e2.employee_id IS NULL AND e1.manager_id IS NOT NULL
 ORDER BY employee_id;
+SELECT 
+    res.Department,
+    res.Employee,
+    res.salary
+FROM (
+    SELECT 
+        b.name AS Department,
+        a.name AS Employee,
+        a.salary,
+        DENSE_RANK() OVER (
+            PARTITION BY a.departmentid 
+            ORDER BY a.salary DESC
+        ) AS rnk
+    FROM employee a 
+    JOIN Department b 
+    ON  a.departmentid = b.id
+) res
+WHERE res.rnk <= 3;
