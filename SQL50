@@ -246,3 +246,9 @@ select p.product_name, sum(o.unit) as unit from Products p join Orders o on p.pr
 SELECT *
 FROM Users
 WHERE mail REGEXP '^[A-Za-z][A-Za-z0-9_\.\-]*@leetcode(\\?com)?\\.com$';
+SELECT
+    product_id
+FROM
+    Products
+WHERE
+    low_fats = 'Y' AND recyclable = 'Y'
