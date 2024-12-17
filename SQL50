@@ -263,3 +263,7 @@ WHERE id NOT IN
         WHERE referee_id = 2
 
         )
+# Write your MySQL query statement below
+SELECT product_id
+FROM Products
+WHERE low_fats = 'Y' AND recyclable = 'Y';
